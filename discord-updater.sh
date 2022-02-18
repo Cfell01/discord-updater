@@ -1,59 +1,55 @@
 #!/bin/bash
 
-clear
-
 LAST=$1
 
 wget -O ~/Downloads/discord.tar.gz "https://discordapp.com/api/download?platform=linux&format=tar.gz";
 
 echo 'Download Complete'
 
-mkdir -p ~/Applications;
+mkdir -p ~/temp_applications;
 
-echo 'Directory Created'
+echo 'Temp Directory Created'
 
-tar xvzf ~/Downloads/discord.tar.gz -C ~/Applications;
+tar xzf ~/Downloads/discord.tar.gz -C ~/temp_applications;
 
-echo 'Archive Extracted to /Applications'
+echo 'Archive Extracted to /temp_applications'
 
-echo
-
-sudo cp -r ~/Applications/Discord /usr/lib64/
+sudo cp -r ~/temp_applications/Discord /usr/lib64/
 
 if [ $? -eq 0 ]; then
-  echo 'COPY SUCCEED'
+  echo 'Copied Discord pkg to /usr/lib64'
 else
-  echo 'FAIL cp'
+  echo 'FAIL cp to /usr/lib64'
 fi
 
 sudo rm -rfd /usr/lib64/discord
 
 if [ $? -eq 0 ]; then
-  echo 'RM SUCCED'
+  echo 'Removed previous version of Discord'
 else
-  echo 'FAIL rm previous'
+  echo 'Failed to remove existing Discord version'
 fi
 
 sudo mv /usr/lib64/Discord /usr/lib64/discord
 
 if [ $? -eq 0 ]; then
-  echo 'MV SUCCEED'
+  echo  'Discord updated successfully'
 else
-  echo 'FAIL rename'
+  echo 'Unable to rename /usr/lib64/Discord to /usr/lib64/discord. Please rename manually'
 fi
 
 sudo rm -rfd ~/Downloads/*.tar.gz
 
 if [ $? -eq 0 ]; then
-  echo 'DELETING TAR.GZ'
+  echo 'Deleted Discord download'
 else
-  echo 'FAIL delete tar.gz'
+  echo 'Failed to delete Discord download'
 fi
 
-sudo rm -rfd ~/Applications/Discord
+sudo rm -rfd ~/temp_applications
 
 if [ $? -eq 0 ]; then
-  echo 'DELETING Discord directory'
+  echo 'Deleted temp directory'
 else
-  echo 'FAIL delete directory'
+  echo 'Failed to delete temp directory'
 fi
