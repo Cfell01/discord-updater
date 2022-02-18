@@ -12,8 +12,8 @@ Changes were implemented based off reddit comment by r/captainstormy
 
 How To Use
 
-Download Script
-run script 
-send me money for food...okay not actully a step
+	-Download Script
+	-run script 
+	-send me money for food...okay not actully a step
 
 Enjoy!
