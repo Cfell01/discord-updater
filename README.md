@@ -3,7 +3,8 @@ Automatic Discord Updater
 Modified Version of Discord Updater From the following source:
 https://gitlab.com/Jokerinout/discord-updater-for-fedora/-/tree/master
 
-The changes made were the following
+The changes made were the following:
+
 	-Script Downloads latest Version of discord on Execute
 	-Removed Need to Specify $PATH by using Tilda 
 	
