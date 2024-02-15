@@ -38,7 +38,7 @@ else
   echo 'Unable to rename /usr/lib64/Discord to /usr/lib64/discord. Please rename manually'
 fi
 
-sudo rm -rfd ~/Downloads/*.tar.gz
+sudo rm -rfd ~/Downloads/discord*.tar.gz
 
 if [ $? -eq 0 ]; then
   echo 'Deleted Discord download'
